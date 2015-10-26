@@ -1,0 +1,7 @@
+.idea/
+hooks/
+node_modules/
+platforms/
+plugins/
+resources/
+typings/

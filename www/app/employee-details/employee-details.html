@@ -1,0 +1,51 @@
+<ion-navbar *navbar>
+  <a menu-toggle *ng-if="!employee">
+    <icon menu></icon>
+  </a>
+  <ion-title>Employee</ion-title>
+</ion-navbar>
+
+<ion-content>
+ <div *ng-if="employee" class="selection">
+    <ion-card>
+         <ion-item>
+            <ion-avatar item-left image-large>
+                <img src="{{employee.picture}}"/>
+            </ion-avatar>
+             <ion-item-content>
+                 <h2>{{employee.firstName}} {{employee.lastName}}</h2>
+                 <p>{{employee.title}}</p>
+             </ion-item-content>
+         </ion-item>
+
+         <a *ng-if="employee.managerId" (click)="viewManager($event, employee.managerId)" ion-item>
+             <icon person item-left></icon>
+             <h2>View Manager</h2>
+             <p>{{employee.managerName}}</p>
+         </a>
+         <a href="tel:{{employee.phone}}" ion-item>
+             <icon call item-left></icon>
+             <h2>Call Office</h2>
+             <p>{{employee.phone}}</p>
+         </a>
+         <a href="tel:{{employee.phone}}" ion-item>
+             <icon call item-left></icon>
+             <h2>Call Mobile</h2>
+             <p>{{employee.mobilePhone}}</p>
+         </a>
+         <a href="tel:{{employee.phone}}" ion-item>
+             <icon text item-left></icon>
+             <h2>Text</h2>
+             <p>{{employee.mobilePhone}}</p>
+         </a>
+         <a href="mailto:{{employee.email}}" ion-item>
+             <icon mail item-left></icon>
+             <h2>Email</h2>
+             <p>{{employee.email}}</p>
+         </a>
+
+     </ion-card>
+
+ </div>
+
+</ion-content>
